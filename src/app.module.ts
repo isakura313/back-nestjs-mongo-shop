@@ -2,18 +2,20 @@ import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ProductController } from './controller/product/product.controller';
-import { ProductSchema } from './schema/product.schema';
-import { ProductService } from './service/product/product.service';
+import { QuestController } from './controller/quest/quest.controller';
+import { QuestSchema } from './schema/quest.schema';
+import { QuestService } from './service/quest/quest.service';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
     MongooseModule.forRoot('mongodb://localhost:27017', {
-      dbName: 'productdb',
+      dbName: 'questdb',
     }),
-    MongooseModule.forFeature([{ name: 'Product', schema: ProductSchema }]),
+    MongooseModule.forFeature([{ name: 'Quest', schema: QuestSchema }]),
+    AuthModule,
   ],
-  controllers: [AppController, ProductController],
-  providers: [AppService, ProductService],
+  controllers: [AppController, QuestController],
+  providers: [AppService, QuestService],
 })
 export class AppModule {}

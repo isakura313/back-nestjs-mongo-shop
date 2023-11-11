@@ -15,8 +15,8 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "/shops"', () => {
-      expect(appController.getHello()).toBe('use /shops to get data');
+    it('should return "/quest"', () => {
+      expect(appController.getHello()).toBe('use /quest to get data');
     });
   });
 });
