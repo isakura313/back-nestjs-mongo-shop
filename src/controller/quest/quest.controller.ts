@@ -10,11 +10,10 @@ import {
   Res,
   UseGuards,
   Query,
-  Logger,
 } from '@nestjs/common';
-import { CreateQuestDto } from 'src/dto/create-quest.dto';
-import { UpdateQuestDto } from 'src/dto/update-quest.dto';
-import { QuestService } from 'src/quest/quest.service';
+import { CreateQuestDto } from '../../dto/create-quest.dto';
+import { UpdateQuestDto } from '../../dto/update-quest.dto';
+import { QuestService } from '../../quest/quest.service';
 import { AuthGuard } from '../../auth/auth.guard';
 
 @Controller('quest')

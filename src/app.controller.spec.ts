@@ -16,7 +16,7 @@ describe('AppController', () => {
 
   describe('root', () => {
     it('should return "/quest"', () => {
-      expect(appController.signIn).toBeTruthy();
+      expect(appController.signIn).toBeCalled();
     });
   });
 });
