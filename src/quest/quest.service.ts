@@ -36,11 +36,37 @@ export class QuestService {
     }
     return questData;
   }
+  async getAllCategories(): Promise<Array<string>> {
+    const quests = await this.questModel.find();
+    const answer = [];
+    quests.forEach((quest) => {
+      if (answer.includes(quest.division)) {
+        return;
+      } else {
+        answer.push(quest.division);
+      }
+    });
+
+    if (!quests || quests.length == 0) {
+      throw new NotFoundException('quests data not found!');
+    }
+    return answer;
+  }
 
   async getQuest(questId: string): Promise<IQuest> {
     const existingQuest = await this.questModel.findById(questId).exec();
     if (!existingQuest) {
       throw new NotFoundException(`Quest #${questId} not found`);
+    }
+    return existingQuest;
+  }
+
+  async getQuestByDivision(division: string): Promise<any> {
+    const existingQuest = await this.questModel
+      .find({ division: division })
+      .exec();
+    if (!existingQuest) {
+      throw new NotFoundException(`Quest #${division} not found`);
     }
     return existingQuest;
   }

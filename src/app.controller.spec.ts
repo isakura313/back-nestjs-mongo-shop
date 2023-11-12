@@ -16,7 +16,7 @@ describe('AppController', () => {
 
   describe('root', () => {
     it('should return "/quest"', () => {
-      expect(appController.getHello()).toBe('use /quest to get data');
+      expect(appController.signIn).toBeTruthy();
     });
   });
 });

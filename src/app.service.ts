@@ -3,6 +3,6 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class AppService {
   getHello(): string {
-    return 'use /quest to get data';
+    return 'use /api/quest to get data';
   }
 }

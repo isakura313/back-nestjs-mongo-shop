@@ -3,6 +3,8 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 @Schema()
 export class Quest {
   @Prop()
+  division: string;
+  @Prop()
   question: string;
 
   @Prop()

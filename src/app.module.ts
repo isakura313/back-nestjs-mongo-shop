@@ -4,7 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { QuestController } from './controller/quest/quest.controller';
 import { QuestSchema } from './schema/quest.schema';
-import { QuestService } from './service/quest/quest.service';
+import { QuestService } from './quest/quest.service';
 import { AuthModule } from './auth/auth.module';
 
 @Module({
